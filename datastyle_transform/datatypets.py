@@ -1,4 +1,4 @@
-def datatypetf(data):
+def datatypetf(data,output_path):
 	table = data.sheets()[0]
 	nrows = table.nrows        
 	ncols = table.ncols 
@@ -9,7 +9,7 @@ def datatypetf(data):
 	secondcolvalues = secondcolvalue[1:nrows]
 	pingwei = list(set(firstcolvalues)) 
 	xuesheng = list(set(secondcolvalues))  
-	f = open('/home/klarus/temp/wenfaxueyaun/17.txt','a')
+	f = open('%s'%(output_path),'a')
 	f.write('label1\n')
 	for i in range(len(pingwei)):
 	    f.write(str(int(pingwei[i]))+'=')
