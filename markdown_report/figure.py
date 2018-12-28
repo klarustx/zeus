@@ -14,8 +14,6 @@ def figure_report(inputpath_hour,inputpath_distance,inputpath_rprate,inputpath_N
     global_conf_distance =pd.read_csv("%s"%(inputpath_distance),sep="\t", header=None)
     global_conf_rprate =pd.read_csv("%s"%(inputpath_rprate),sep="\t", header=None)
     global_conf_NDSDI =pd.read_csv("%s"%(inputpath_NDSDI),sep="\t", header=None)
-    #global_conf_hour =pd.read_csv("/home/luban/xuelijiao/scala_simulation/plot_data/11_182292_20181203183206_hour.csv",sep="\t", header=None)
-    #global_conf_distance =pd.read_csv("/home/luban/xuelijiao/scala_simulation/plot_data/11_182292_20181203183206_distance.csv",sep="\t", header=None)
     #global_conf = yaml.load(f)
     global_conf_hour.columns = ['hour','gmv','subsidy','ecr','discount_ecr','alldiscount_ecr']
     global_conf_distance.columns = ['distance','gmv','subsidy','ecr','discount_ecr','alldiscount_ecr']
