@@ -1,11 +1,10 @@
 
 export PYSPARK_DRIVER_PYTHON=/usr/bin/python
 
-report_path=report/24
+report_path=report
 if [ ! -d ${report_path} ] ; then
     mkdir -p ${report_path}
 fi
-
 
 spark-submit \
     --num-executors 400 \
@@ -20,6 +19,3 @@ spark-submit \
     --queue root.celuemoxingbu_driver_service_score \
     --driver-memory 10g \
     --py-files markdown_report.py math_computation.py
-
-#cp conf/*.css $report_path
-
