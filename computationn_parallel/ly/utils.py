@@ -66,7 +66,3 @@ def prcondition(m):
 
 if __name__ == '__main__':
   print "0.74,0.65,0.6",spectrum_radius(0.88,0.91,0.9)
-
-
-def sss(mmm):
-    return mmm*mmm
