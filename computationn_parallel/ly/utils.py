@@ -49,7 +49,7 @@ def spectrum_radius(erfa,beta,theta):
     return spectrum
 
 
-def prcondition(m):
+def precondition(m):
     I=np.eye(m)
 
     Bm=(1.0/pow(h,2))*tridiag(-1,2,-1,m)
