@@ -60,7 +60,7 @@ def spectrum_radius(erfa,beta,theta):
     #print (max(eigvalues))
     return spectrum
 
-def prcondition(m):
+def precondition(m):
     I=np.eye(m)
 
     Bm=(1.0/(h*h))*tridiag(-1,2,-1,m)
