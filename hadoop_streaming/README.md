@@ -1,0 +1,1 @@
+##some hadoop streaming examples
