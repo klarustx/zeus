@@ -23,7 +23,6 @@ def PassengerflagSimu(spark: SparkSession, city_list: String, sday: String, eday
 
 }
 
-
 object WordCountMain {
 
   def main(args: Array[String]): Unit = {
@@ -48,7 +47,6 @@ object WordCountMain {
     val spark = BuildSparkSession()
     import spark.implicits._
 
-
     val conf = new SparkConf().setAppName("wordcount")
     val sc = new SparkContext(conf)
 
@@ -60,10 +58,6 @@ object WordCountMain {
     val lines = input.flatMap(line => line.split(" "))
     val count = lines.map(word => (word, 1)).reduceByKey { case (x, y) => x + y }
 
-
     val output = count.saveAsTextFile("/home/cjj/testfile")
-
-
-
 
 }
