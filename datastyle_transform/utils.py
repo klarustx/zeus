@@ -5,8 +5,7 @@ import pandas as pd
 def datastyle_transform(df):
     # df = pd.read_csv(open(r'%s'%(input_path)),encoding='utf-8')
     data = df[["课程编号","课程名称","学号","姓名","总成绩","导师","专业名称"]]
-    # datas= data[data["课程名称"]=='学术道德与论文写作（理）']
-    # print(datas)
+   
     new_cols = list(set(data['课程名称'].values))
     new_cols.insert(0,'学号')
     new_cols.insert(1,'姓名')
