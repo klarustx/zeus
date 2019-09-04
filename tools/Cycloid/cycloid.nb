@@ -1,0 +1,17 @@
+R = 2;
+Manipulate[
+ Show[Graphics[{Thickness[0.01], Red, Circle[{0, 0}, R], Green, 
+    Line[{lctr[t, r], pt[t, r, d]}], Red, PointSize[.015], 
+    Point[pt[t, r, d]], Blue, Circle[lctr[t, r], Abs[r]]}], 
+  ParametricPlot[pt[t, r, d], {t, -.01, t}, 
+   PlotStyle -> Thickness[0.011], 
+   ColorFunction -> Function[{x, y, z}, Hue[tx]]], 
+  Graphics[Text["", {0, 0}]], ImageSize -> {360, 360}, 
+  PlotLabel -> Row[{"半径比值:", 3./r}], 
+  PlotRange -> {{-7, 7}, {-7, 7}}], {{t, 0, "时间参数"}, 0, 6*Pi*R, 
+  Appearance -> "Labeled", 
+  ControlPlacement -> Top}, Delimiter, "小圆半径", {{r, 1, ""}, -2, 2, 
+  1/60, Appearance -> "Labeled", 
+  ImageSize -> Tiny}, Delimiter, "绿色线段", {{d, 1, ""}, 0, 1.5, 1/60, 
+  Appearance -> "Labeled", ImageSize -> Tiny}, Delimiter]
+
