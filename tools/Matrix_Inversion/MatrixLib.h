@@ -1,6 +1,6 @@
-//////////////////ÎÄ¼şÃû£º MatrixLib.h ////////////////////////////////////////
-////  ¾ØÕóÔËËãÄ£¿éµÄ¿âº¯ÊıÍ·ÎÄ¼ş
-/* Ö÷Òª¹¦ÄÜ£º ÓÃÓÚÉú³É¿âº¯Êı
+//////////////////æ–‡ä»¶åï¼š MatrixLib.h ////////////////////////////////////////
+////  çŸ©é˜µè¿ç®—æ¨¡å—çš„åº“å‡½æ•°å¤´æ–‡ä»¶
+/* ä¸»è¦åŠŸèƒ½ï¼š ç”¨äºç”Ÿæˆåº“å‡½æ•°
 */
 /***********************************************************/
 
@@ -12,30 +12,28 @@
 #include<stdlib.h>
 #include<math.h>
 #include<string.h>
-//#include "C6747.h"
 
 
+void	 MatMult(double a[],double b[],int m1,int n1,int k,double c[]);	    //çŸ©é˜µç›¸ä¹˜
+void	 MatkMult(double out_m[], double in_m[],double k,int rows,int cols);///çŸ©é˜µä¹˜ä»¥å¸¸æ•° k
+void     MatkMultf(float out_m[], float in_m[],float k,int rows,int cols); ///çŸ©é˜µä¹˜ä»¥å¸¸æ•° k å•ç²¾åº¦æµ®ç‚¹
+void     MatSub(double a[],double b[],int m1,int n1,double c[]);		   //çŸ©é˜µç›¸å‡
+void	 MatSubf(float a[],float b[],int m1,int n1,float c[]);	    //çŸ©é˜µç›¸å‡å•æµ®ç‚¹
+void	 get_m_Start(double ans[],double m[],int n);				//è®¡ç®—æ¯ä¸€è¡Œæ¯ä¸€åˆ—çš„æ¯ä¸ªå…ƒç´ æ‰€å¯¹åº”çš„ä½™å­å¼ï¼Œç»„æˆA*  
+void	 MatT(double a[],int m1,int n1,double at[]);				//çŸ©é˜µè½¬ç½®
+void	 MatDiv(double a[],float t,int m1,int n1,double at[]);	//çŸ©é˜µé™¤ä»¥å¸¸æ•° t
 
-void	 MatMult(double a[],double b[],int m1,int n1,int k,double c[]);	    //¾ØÕóÏà³Ë
-void	 MatkMult(double out_m[], double in_m[],double k,int rows,int cols);///¾ØÕó³ËÒÔ³£Êı k
-void     MatkMultf(float out_m[], float in_m[],float k,int rows,int cols); ///¾ØÕó³ËÒÔ³£Êı k µ¥¾«¶È¸¡µã
-void     MatSub(double a[],double b[],int m1,int n1,double c[]);		   //¾ØÕóÏà¼õ
-void	 MatSubf(float a[],float b[],int m1,int n1,float c[]);	    //¾ØÕóÏà¼õµ¥¸¡µã
-void	 get_m_Start(double ans[],double m[],int n);				//¼ÆËãÃ¿Ò»ĞĞÃ¿Ò»ÁĞµÄÃ¿¸öÔªËØËù¶ÔÓ¦µÄÓà×ÓÊ½£¬×é³ÉA*  
-void	 MatT(double a[],int m1,int n1,double at[]);				//¾ØÕó×ªÖÃ
-void	 MatDiv(double a[],float t,int m1,int n1,double at[]);	//¾ØÕó³ıÒÔ³£Êı t
-
-int	MatVD(double a[],int n,double v[],double eps,int jt);	// VD·Ö½âº¯Êı
-int	MatInv(double a[],int n);							    // ¾ØÕóÇóÄæ
-int	MatInv1(double  out_m[], double  in_m[],int n);			// ¾ØÕóÇóÄæ£¬ÊäÈëÊä³ö£¬²ÉÓÃÓà×ÓÊ½·½·¨
-void	MatPlus(double a[],double b[],int m1,int n1,double c[]);// ¾ØÕóÏà¼Ó
-void    MatPlusf(float a[],float b[],int m1,int n1,float c[]);   // ¾ØÕóÏà¼Ó µ¥¸¡µã
-void    Mat_Multf(float *p1,float *p2,int m,int k,int n,float *p3);//¾ØÕóÏà³Ë µ¥¾«¶È¸¡µã
-void    MatMultf(float a[],float b[],int m1,int n1,int k,float c[]);	//¾ØÕóÏà³Ë
-double	get_fabs_m(double  m[],int n);	//°´µÚÒ»ĞĞÕ¹¿ª¼ÆËã|Mag_A|
-void    Across_Multply(double a[3],double b[3],double c[3]);		//ÏòÁ¿²æ³Ë
+int	MatVD(double a[],int n,double v[],double eps,int jt);	// VDåˆ†è§£å‡½æ•°
+int	MatInv(double a[],int n);							    // çŸ©é˜µæ±‚é€†
+int	MatInv1(double  out_m[], double  in_m[],int n);			// çŸ©é˜µæ±‚é€†ï¼Œè¾“å…¥è¾“å‡ºï¼Œé‡‡ç”¨ä½™å­å¼æ–¹æ³•
+void	MatPlus(double a[],double b[],int m1,int n1,double c[]);// çŸ©é˜µç›¸åŠ 
+void    MatPlusf(float a[],float b[],int m1,int n1,float c[]);   // çŸ©é˜µç›¸åŠ  å•æµ®ç‚¹
+void    Mat_Multf(float *p1,float *p2,int m,int k,int n,float *p3);//çŸ©é˜µç›¸ä¹˜ å•ç²¾åº¦æµ®ç‚¹
+void    MatMultf(float a[],float b[],int m1,int n1,int k,float c[]);	//çŸ©é˜µç›¸ä¹˜
+double	get_fabs_m(double  m[],int n);	//æŒ‰ç¬¬ä¸€è¡Œå±•å¼€è®¡ç®—|Mag_A|
+void    Across_Multply(double a[3],double b[3],double c[3]);		//å‘é‡å‰ä¹˜
 
 
-float  DelWildGyroPoint(float *fData,int nNum);		 // È¥³ıÒ°µã
+float  DelWildGyroPoint(float *fData,int nNum);		 // å»é™¤é‡ç‚¹
 
 #endif
