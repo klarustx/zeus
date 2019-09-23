@@ -1,4 +1,3 @@
-
 import numpy as np
 import pandas as pd
 from utils import *
@@ -134,6 +133,7 @@ def caculate_process(df,output_path):
 
     # step4：获取汽车行驶的每个时间片段
     time_indice=speed_detection(final_data)
+    
     # step5：计算汽车行驶的每个时间片段加速时间
     accelerationtime_indice=instantaneous_acceleration(time_indice)
     file_path='./data/accelerationtime_indice.txt'
