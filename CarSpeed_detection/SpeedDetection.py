@@ -1,3 +1,4 @@
+
 import numpy as np
 import pandas as pd
 from utils import *
@@ -116,25 +117,29 @@ def caculate_process(df,output_path):
     data_dict={}
 
     #stepl：数据格式转化
+    print('stepl：数据格式转化')
     df=data_preconditon(df)
     df_new=df.shift(axis=0) #将dataframe数据下移一行
     data_new=df-df_new
 
     #step2：查找时间缺失小于180s的位置
+    print('step2：查找时间缺失小于180s的位置')
     df_filter=filter_timeseries(data_new)
     data_dict["time"]=list(df['time'].values)
     timeindex_num=get_timeindex_num(df_filter,data_dict["time"])
     data_dict["GPS_speed"]=list(df['GPS_speed'].values)
 
     # step3：补全时间缺失小于180s的值
+    print('step3：补全时间缺失小于180s的值')
     completion_timeseries=completion_misstime(data_dict,timeindex_num)
     final_data=pd.DataFrame.from_dict(completion_timeseries,orient="index").T
     final_data.to_csv('%s'%(output_path)) # 保存补全后的数据
 
     # step4：获取汽车行驶的每个时间片段
+    print('step4：获取汽车行驶的每个时间片段')
     time_indice=speed_detection(final_data)
-    
     # step5：计算汽车行驶的每个时间片段加速时间
+    print('step5：计算汽车行驶的每个时间片段加速时间')
     accelerationtime_indice=instantaneous_acceleration(time_indice)
     file_path='./data/accelerationtime_indice.txt'
     write_data(file_path,accelerationtime_indice)
