@@ -9,8 +9,7 @@ def data_preconditon(df):
     df["day"]=df["time"].apply(lambda x:x.day)
     df["hour"]=df["time"].apply(lambda x:x.hour)
     df["minute"]=df["time"].apply(lambda x:x.minute)
-    df["second"]=df["time"].apply(lambda x:x.second)
-    # df["num"]=df["hour"]*60*df["minute"]*60*df["second"]   
+    df["second"]=df["time"].apply(lambda x:x.second)   
     return df
 
 #获取时间序列中缺少时间间隔小于180s的序列
@@ -37,6 +36,7 @@ def get_timeindex_num(data,time_list):
         timeindex_num.append([location,time_spot,num_list[i]])
     
     return timeindex_num
+
 #补全缺失时间
 def completion_misstime(df_dict,timeindex_num):
     final_dict={}
@@ -76,14 +76,13 @@ def speed_detection(final_dataframe):
     tmp1 =0  # 标记片段开始
     indice=[]
     record = []
-
     for i in range(len(index)-1):
         if (index[i+1]==(index[i]+1)):
             tmp1=tmp1+1
         else:   
             tmp1=tmp1+1
             indice.append(tmp1)
-    index[indice[0]-1]
+    
     #查找每个片段
     record.append([final_data_dict["time"][0:index[indice[0]-1]+1],final_data_dict["GPS_speed"][0:index[indice[0]-1]+1]])
     for i in range(len(indice)-1):       
