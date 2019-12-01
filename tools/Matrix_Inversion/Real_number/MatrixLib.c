@@ -1,19 +1,19 @@
 /************************************************************/
-//////////////////ÎÄ¼şÃû£º MatrixLib.c ////////////////////////////////////////
-//Ö÷Òª¹¦ÄÜ£º ÓÃÓÚÉú³É¿âº¯Êı
-//1.¾ØÕóÔËËã¿âº¯Êı£¬°üº¬ËùÓĞµÄ¾ØÕóÔËËãº¯Êı
+//////////////////æ–‡ä»¶åï¼š MatrixLib.c ////////////////////////////////////////
+//ä¸»è¦åŠŸèƒ½ï¼š ç”¨äºç”Ÿæˆåº“å‡½æ•°
+//1.çŸ©é˜µè¿ç®—åº“å‡½æ•°ï¼ŒåŒ…å«æ‰€æœ‰çš„çŸ©é˜µè¿ç®—å‡½æ•°
 //
 /***********************************************************/
 
-#include	"MatrixLib.h"
+#include "MatrixLib.h"
 #include <stdio.h>
 #include <malloc.h>  
-#include<string.h>
+#include <string.h>
 #include <stdlib.h>
 ////////////////////////////////////////////////////////////////////////////
-//////////////////********¾ØÕóÔËËã****************//////////////////////
+//////////////////********çŸ©é˜µè¿ç®—****************//////////////////////
 ////////////////////////////////////////////////////////////////////////////
-void Mat_Multf(float *p1,float *p2,int m,int k,int n,float *p3)//¾ØÕóÏà³Ë µ¥¾«¶È¸¡µã
+void Mat_Multf(float *p1,float *p2,int m,int k,int n,float *p3)//çŸ©é˜µç›¸ä¹˜ å•ç²¾åº¦æµ®ç‚¹
 {
 	int i,j,l;
 	for(i=0;i<m;i++)
@@ -27,7 +27,7 @@ void Mat_Multf(float *p1,float *p2,int m,int k,int n,float *p3)//¾ØÕóÏà³Ë µ¥¾«¶È
 	}
 }
 
-void MatMult(double a[],double b[],int m1,int n1,int k,double c[])	//¾ØÕóÏà³Ë
+void MatMult(double a[],double b[],int m1,int n1,int k,double c[])	//çŸ©é˜µç›¸ä¹˜
 {
 	 int i,j,l,u;
 	 for(i=0;i<=m1-1;i++)
@@ -42,7 +42,7 @@ void MatMult(double a[],double b[],int m1,int n1,int k,double c[])	//¾ØÕóÏà³Ë
 	  return;
  }
 
-void MatMultf(float a[],float b[],int m1,int n1,int k,float c[])	//¾ØÕóÏà³Ë
+void MatMultf(float a[],float b[],int m1,int n1,int k,float c[])	//çŸ©é˜µç›¸ä¹˜
 {
 	 int i,j,l,u;
 	 for(i=0;i<=m1-1;i++)
@@ -58,7 +58,7 @@ void MatMultf(float a[],float b[],int m1,int n1,int k,float c[])	//¾ØÕóÏà³Ë
  
 }
   
-void MatSub(double a[],double b[],int m1,int n1,double c[])	//¾ØÕóÏà¼õ
+void MatSub(double a[],double b[],int m1,int n1,double c[])	//çŸ©é˜µç›¸å‡
 {
 	 int i,j,u;
 	 for(i=0;i<=m1-1;i++)
@@ -72,7 +72,7 @@ void MatSub(double a[],double b[],int m1,int n1,double c[])	//¾ØÕóÏà¼õ
 	  return;
 }
 
-void MatSubf(float a[],float b[],int m1,int n1,float c[])	//¾ØÕóÏà¼õµ¥¸¡µã
+void MatSubf(float a[],float b[],int m1,int n1,float c[])	//çŸ©é˜µç›¸å‡å•æµ®ç‚¹
 {
 	 int i,j,u;
 	 for(i=0;i<=m1-1;i++)
@@ -86,7 +86,7 @@ void MatSubf(float a[],float b[],int m1,int n1,float c[])	//¾ØÕóÏà¼õµ¥¸¡µã
 	  return;
 }
 
-///¾ØÕóÇóÄæ£¬Çó³É¹¦·µ»Ø1£¬·ñÔò·µ»Ø0
+///çŸ©é˜µæ±‚é€†ï¼Œæ±‚æˆåŠŸè¿”å›1ï¼Œå¦åˆ™è¿”å›0
 int MatInv(double a[],int n)
 {
 	 int *is,*js,i,j,k,l,v,u;
@@ -181,7 +181,7 @@ int MatInv(double a[],int n)
 	  return(1);
 }
 
-int MatInv1(double  out_m[], double  in_m[],int n)	//¾ØÕóÇóÄæ£¬ÊäÈëÊä³ö
+int MatInv1(double  out_m[], double  in_m[],int n)	//çŸ©é˜µæ±‚é€†ï¼Œè¾“å…¥è¾“å‡º
 {
 	int i,j;
 	double fabs_m;
@@ -201,7 +201,7 @@ int MatInv1(double  out_m[], double  in_m[],int n)	//¾ØÕóÇóÄæ£¬ÊäÈëÊä³ö
 }
 
 
-//¼ÆËãÃ¿Ò»ĞĞÃ¿Ò»ÁĞµÄÃ¿¸öÔªËØËù¶ÔÓ¦µÄÓà×ÓÊ½£¬×é³ÉA*  
+//è®¡ç®—æ¯ä¸€è¡Œæ¯ä¸€åˆ—çš„æ¯ä¸ªå…ƒç´ æ‰€å¯¹åº”çš„ä½™å­å¼ï¼Œç»„æˆA*  
 void get_m_Start(double ans[],double m[],int n)
 {  
 	int i,j,k,t,isk,ist;  
@@ -284,7 +284,7 @@ void MatPlus(double a[],double b[],int m1,int n1,double c[])
 	  return;
  }
 
- void MatPlusf(float a[],float b[],int m1,int n1,float c[]) //// ¾ØÕóÏà¼Ó µ¥¸¡µã
+ void MatPlusf(float a[],float b[],int m1,int n1,float c[]) //// çŸ©é˜µç›¸åŠ  å•æµ®ç‚¹
 {
 	 int i,j,u;
 	 for(i=0;i<=m1-1;i++)
@@ -297,7 +297,7 @@ void MatPlus(double a[],double b[],int m1,int n1,double c[])
 	  }
 	  return;
  }
-///¾ØÕó³ËÒÔ ³£Êı
+///çŸ©é˜µä¹˜ä»¥ å¸¸æ•°
  void MatkMult(double out_m[], double in_m[],double k,int rows,int cols)
 {
 	 int i,j;
@@ -314,7 +314,7 @@ void MatPlus(double a[],double b[],int m1,int n1,double c[])
 			out_m[i*cols+j] = k*in_m[i*cols+j];
 }
 
-// VD·Ö½âº¯Êı ·Ö½â³É¹¦·µ»Ø1£¬·ñÔò·µ»Ø0
+// VDåˆ†è§£å‡½æ•° åˆ†è§£æˆåŠŸè¿”å›1ï¼Œå¦åˆ™è¿”å›0
 int MatVD(double a[],int n,double v[],double eps,int jt)		
 {
 	int i,j,p,q,u,w,t,s,l;
@@ -391,7 +391,7 @@ int MatVD(double a[],int n,double v[],double eps,int jt)
 //	return(1);
 }  
 
-double get_fabs_m(double  m[],int n)//°´µÚÒ»ĞĞÕ¹¿ª¼ÆËã|Mag_A|  
+double get_fabs_m(double  m[],int n)//æŒ‰ç¬¬ä¸€è¡Œå±•å¼€è®¡ç®—|Mag_A|  
 {     
 	double  ans = 0;  
 	double temp[100];  
@@ -433,7 +433,7 @@ double get_fabs_m(double  m[],int n)//°´µÚÒ»ĞĞÕ¹¿ª¼ÆËã|Mag_A|
 }  
 
 
- void Across_Multply(double a[3],double b[3],double c[3])	// ÏòÁ¿²æ³Ë
+ void Across_Multply(double a[3],double b[3],double c[3])	// å‘é‡å‰ä¹˜
 {
 	c[0]=-a[2]*b[1]+a[1]*b[2];
 	c[1]=a[2]*b[0]-a[0]*b[2];
@@ -441,7 +441,7 @@ double get_fabs_m(double  m[],int n)//°´µÚÒ»ĞĞÕ¹¿ª¼ÆËã|Mag_A|
 }
 
 
-/*È¥³ıÒ°µã£¬fData  Îª²É¼¯µÄÊı¾İ£¬nNumÎªÊı¾İµÄ¸öÊı£¬·µ»ØÈ¥µôî´ó×îĞ¡ÖµºóµÄÆ½¾ùÖ**/
+/*å»é™¤é‡ç‚¹ï¼ŒfData  ä¸ºé‡‡é›†çš„æ•°æ®ï¼ŒnNumä¸ºæ•°æ®çš„ä¸ªæ•°ï¼Œè¿”å›å»æ‰ç•²ç¬é’šâ‰ˆå²›èŸ®é’ éª„î‹‡**/
 double DelWildGyroPoint(double *fData,int nNum)
 {
 	char j;
@@ -455,6 +455,3 @@ double DelWildGyroPoint(double *fData,int nNum)
 	fAve = fAve /nNum;
 	return fAve;
 }
-
-
-
