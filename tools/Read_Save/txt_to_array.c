@@ -14,9 +14,9 @@ float ** get_RGB_araay(int flag)
   int i,j;
   FILE *fp;
   switch (flag){
-        case 1:fp = fopen("G:/工作资料/C语言/data/array.txt","rb"); break; 
-        case 2:fp = fopen("G:/工作资料/C语言/data/array.txt","rb"); break;
-        case 3:fp = fopen("G:/工作资料/C语言/data/array.txt","rb"); break;
+        case 1:fp = fopen("G:/工作资料/C语言/data/array1.txt","rb"); break; 
+        case 2:fp = fopen("G:/工作资料/C语言/data/array2.txt","rb"); break;
+        case 3:fp = fopen("G:/工作资料/C语言/data/array3.txt","rb"); break;
         default:printf("error\n");
     }
   //fp = fopen("G:/工作资料/C语言/data/array.txt","rb");  
