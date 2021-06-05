@@ -133,13 +133,12 @@ void IFFT(COMPLEX *FD, COMPLEX *TD, int power)
     free(x);  
 }  
 
-/*靠靠縡ft靠靠�*/
+/*信号的傅里叶变换函数入口*/
 double * fft(double original_signal[], int len )
 {
   int i;
   Array Amplitude;
   Amplitude=array_creat(len);
-  //double * Amplitude = malloc(len * sizeof(double));
   COMPLEX *signal  = (COMPLEX *) malloc(len * sizeof(COMPLEX));
   COMPLEX *FD_signal  = (COMPLEX *) malloc(len * sizeof(COMPLEX));
  
