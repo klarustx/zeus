@@ -13,8 +13,6 @@ typedef struct
     double im;  
 }COMPLEX;  
 
-
-
 /*复数的加运算*/  
 COMPLEX Add(COMPLEX c1, COMPLEX c2)  
 {  
@@ -39,7 +37,6 @@ COMPLEX Mul(COMPLEX c1, COMPLEX c2)
     c.im = c1.re*c2.im + c1.im*c2.re;  
     return c;  
 }  
-
 
 /*快速傅立叶变换 
 TD为时域值，FD为频域值，power为2的幂数*/  
@@ -85,7 +82,6 @@ void FFT(COMPLEX *TD, COMPLEX *FD, int power)
         X2=X;  
     }  
   
-
     /*重新排序*/  
     for(j=0;j<count;j++)  
     {  
@@ -102,7 +98,6 @@ void FFT(COMPLEX *TD, COMPLEX *FD, int power)
     free(W);  
     free(X1);  
     free(X2);  
-
 }  
 /*快速傅立叶反变换，利用快速傅立叶变换 
 FD为频域值，TD为时域值，power为2的幂数*/  
@@ -142,7 +137,6 @@ double * fft(double original_signal[], int len )
   COMPLEX *signal  = (COMPLEX *) malloc(len * sizeof(COMPLEX));
   COMPLEX *FD_signal  = (COMPLEX *) malloc(len * sizeof(COMPLEX));
  
-
 for(i=0; i<len; i++)
   {
     signal[i].re = double(original_signal[i]);
@@ -161,7 +155,6 @@ for(i=0;i<len;i=i+1)
 	printf("%lf  %lf\n",FD_signal[i].re,FD_signal[i].im);
 }
 */
-
 
 for(i=0;i<len;i=i+1)
 {
