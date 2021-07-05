@@ -123,6 +123,4 @@ int MatInv(COMPLEX a[],int n)
     return(1);
 }
 
-
-
 #endif
