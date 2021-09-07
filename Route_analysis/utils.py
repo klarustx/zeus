@@ -16,7 +16,6 @@ def get_angle(lng_a, lat_a, lng_b, lat_b):
     return angle
 # 经纬度转换为guass坐标系下坐标
 def GaussToBLToGauss(longitude,latitude):
-
      iPI = 0.0174532925199433; #3.1415926535898/180.0;
      ZoneWide = 6; #6度带宽
     #  a=6378245.0
