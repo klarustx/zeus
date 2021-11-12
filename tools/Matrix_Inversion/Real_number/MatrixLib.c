@@ -4,7 +4,6 @@
 //1.矩阵运算库函数，包含所有的矩阵运算函数
 //
 /***********************************************************/
-
 #include "MatrixLib.h"
 #include <stdio.h>
 #include <malloc.h>  
@@ -432,14 +431,12 @@ double get_fabs_m(double  m[],int n)//按第一行展开计算|Mag_A|
 	return ans;  
 }  
 
-
  void Across_Multply(double a[3],double b[3],double c[3])	// 向量叉乘
 {
 	c[0]=-a[2]*b[1]+a[1]*b[2];
 	c[1]=a[2]*b[0]-a[0]*b[2];
 	c[2]=-a[1]*b[0]+a[0]*b[1];	
 }
-
 
 /*去除野点，fData  为采集的数据，nNum为数据的个数，返回去掉畲笞钚≈岛蟮钠骄**/
 double DelWildGyroPoint(double *fData,int nNum)
