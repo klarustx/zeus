@@ -7,12 +7,10 @@
 #ifndef _Matrix_Lib_
 #define _Matrix_Lib_
 
-
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
 #include<string.h>
-
 
 void	 MatMult(double a[],double b[],int m1,int n1,int k,double c[]);	    //矩阵相乘
 void	 MatkMult(double out_m[], double in_m[],double k,int rows,int cols);///矩阵乘以常数 k
@@ -32,7 +30,6 @@ void    Mat_Multf(float *p1,float *p2,int m,int k,int n,float *p3);//矩阵相�
 void    MatMultf(float a[],float b[],int m1,int n1,int k,float c[]);	//矩阵相乘
 double	get_fabs_m(double  m[],int n);	//按第一行展开计算|Mag_A|
 void    Across_Multply(double a[3],double b[3],double c[3]);		//向量叉乘
-
 
 float  DelWildGyroPoint(float *fData,int nNum);		 // 去除野点
 
