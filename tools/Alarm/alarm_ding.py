@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # coding: utf-8
-
 import urllib2
 
 class AlarmHelper :
@@ -33,5 +32,3 @@ class AlarmHelper :
 if __name__ == "__main__" :
     objAlarm = AlarmHelper()
     objAlarm.alarm("c85a0a07c228f03d80c8ad2de003f4f1abd4e809882adef89bbcbe81310c0fa8","hello,world!!!I was born!!!",[phone_numbers])
-
-
