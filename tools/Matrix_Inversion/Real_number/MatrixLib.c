@@ -19,9 +19,9 @@ void Mat_Multf(float *p1,float *p2,int m,int k,int n,float *p3)//矩阵相乘 �
 	{
 		for(j=0;j<n;j++)
 		{	
-			*(p3+i*n+j)=0.0;		
-			for(l=0;l<k;l++)
-			    *(p3+i*n+j)=*(p3+i*n+j)+(*(p1+i*k+l))*(*(p2+l*n+j));
+		   *(p3+i*n+j)=0.0;		
+		   for(l=0;l<k;l++)
+		      *(p3+i*n+j)=*(p3+i*n+j)+(*(p1+i*k+l))*(*(p2+l*n+j));
 		}
 	}
 }
@@ -35,12 +35,12 @@ void MatMult(double a[],double b[],int m1,int n1,int k,double c[])	//矩阵相�
 	  {
 	   u=i*k+j; c[u]=0.0;
 	   for(l=0;l<=n1-1;l++)
-	    c[u]=c[u]+a[i*n1+l]*b[l*k+j];
+	      c[u]=c[u]+a[i*n1+l]*b[l*k+j];
 	   }
 	  }
 	  return;
  }
-
+ 
 void MatMultf(float a[],float b[],int m1,int n1,int k,float c[])	//矩阵相乘
 {
 	 int i,j,l,u;
