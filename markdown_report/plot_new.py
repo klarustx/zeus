@@ -164,6 +164,5 @@ def main():
 #    print type(better_params), len(better_params)#, len(better_params[0])
     print("GMV=%.2f, Cost=%.2f, Order=%.2f" % (gmv, cost, order))
 
-
 if __name__ == '__main__':
     main()
