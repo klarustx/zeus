@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # coding=utf-8
-
 import os
 import sys
 import numpy as np
@@ -12,14 +11,11 @@ gmv = 0
 cost = 0
 order = 0
 
-
 def LoadSimulationParams(param_file):
     """
     读取参数空间文件，并判断是否需要过滤掉(0, 0, 0)的情况
     """
-
     param_dict = {}
-
     with open(param_file) as f:
         for line in f.readlines():
             #print(line)
@@ -42,7 +38,6 @@ def PrepareParams(param_file):
     """
     从文件读取评估结论样本(eval_file)；从文件读取参数列表(params_file)并找到更优参数
     """
-    
     global gmv, cost, order
     '''
     with open(eval_file) as f:
@@ -172,4 +167,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
